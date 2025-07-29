@@ -10,11 +10,16 @@
         <div class="card-body">
 
             <div class="pt-4 pb-2">
+                
+                {{-- Message show --}}
+                @include('includes.admin._messages')
+
                 <h5 class="card-title text-center pb-0 fs-4">Forgot Password</h5>
                 <p class="text-center small">Enter your email to recover password</p>
             </div>
 
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation" novalidate method="post" action="{{ route('forgot_post') }}">
+                @csrf
 
                 <div class="col-12">
                     <label for="yourEmail" class="form-label">Email</label>
