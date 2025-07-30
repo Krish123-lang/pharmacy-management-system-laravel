@@ -40,12 +40,23 @@
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
                                         <td>{{ $customer->name }}</td>
-                                        <td>{{ $customer->contact_numer }}</td>
+                                        <td>{{ $customer->contact_number }}</td>
                                         <td>{{ $customer->address }}</td>
                                         <td>{{ $customer->doctor_name }}</td>
                                         <td>{{ $customer->doctor_address }}</td>
                                         <td>{{ date('Y-m-d', strtotime($customer->created_at)) }}</td>
-                                        <td>Action</td>
+                                        <td class="d-flex gap-1">
+                                            <a href="{{ route('edit_customers', $customer->id) }}"><i class="bi bi-pencil-square btn btn-success"></i></a>
+
+                                            <form action="{{ route('delete_customers', $customer->id) }}" method="post" onsubmit="return confirm('Are you sure?')" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('delete')
+
+                                                <button type="submit" class="btn btn-danger btn" title="Delete">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
 

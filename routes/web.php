@@ -22,4 +22,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('admin/customers', [CustomerController::class, 'customers'])->name('customers');
     Route::get('admin/customers/add', [CustomerController::class, 'add_customers'])->name('add_customers');
     Route::post('admin/customers/add', [CustomerController::class, 'insert_add_customers'])->name('insert_add_customers');
+    Route::get('admin/customers/edit/{customer}', [CustomerController::class, 'edit_customers'])->name('edit_customers');
+    Route::put('admin/customers/edit/{customer}', [CustomerController::class, 'update_customers'])->name('update_customers');
+    Route::delete('admin/customers/delete/{customer}', [CustomerController::class, 'delete_customers'])->name('delete_customers');
 });
