@@ -3,11 +3,18 @@
       <ul class="sidebar-nav" id="sidebar-nav">
 
           <li class="nav-item">
-              <a class="nav-link " href="index.html">
+              <a class="nav-link" @if (Request::segment(2) == 'dashboard') @else collapsed @endif href="{{ route('dashboard') }}">
                   <i class="bi bi-grid"></i>
                   <span>Dashboard</span>
               </a>
           </li><!-- End Dashboard Nav -->
+
+          <li class="nav-item">
+              <a class="nav-link" @if (Request::segment(2) == 'customers') @else collapsed @endif href="{{ route('customers') }}">
+                  <i class="bi bi-person"></i>
+                  <span>Customers</span>
+              </a>
+          </li><!-- End Customers Nav -->
 
           <li class="nav-item">
               <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">

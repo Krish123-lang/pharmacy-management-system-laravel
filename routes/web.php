@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 // Admin Dashboard
 Route::middleware(['admin'])->group(function () {
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('admin/customers', [CustomerController::class, 'customers'])->name('customers');
+    Route::get('admin/customers/add', [CustomerController::class, 'add_customers'])->name('add_customers');
+    Route::post('admin/customers/add', [CustomerController::class, 'insert_add_customers'])->name('insert_add_customers');
 });
