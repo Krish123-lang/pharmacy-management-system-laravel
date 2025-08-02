@@ -17,6 +17,13 @@
           </li><!-- End Customers Nav -->
 
           <li class="nav-item">
+              <a class="nav-link" @if (Request::segment(2) == 'customers') @else collapsed @endif href="{{ route('medicines') }}">
+                  <i class="bi bi-shop"></i>
+                  <span>Medicines</span>
+              </a>
+          </li><!-- End Medicines Nav -->
+
+          <li class="nav-item">
               <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                   <i class="bi bi-menu-button-wide"></i><span>Components</span><i
                       class="bi bi-chevron-down ms-auto"></i>
