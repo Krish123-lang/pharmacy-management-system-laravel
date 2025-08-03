@@ -66,5 +66,9 @@ Route::middleware(['admin'])->group(function () {
         Route::get('purchases/edit/{purchase}', [PurchaseController::class, 'edit'])->name('purchases.edit');
         Route::put('purchases/update/{purchase}', [PurchaseController::class, 'update'])->name('purchases.update');
         Route::delete('purchases/destroy/{purchase}', [PurchaseController::class, 'destroy'])->name('purchases.destroy');
+
+        Route::get('account', [DashboardController::class, 'account'])->name('account');
+        Route::put('update_account/{user}', [DashboardController::class, 'update_account'])->name('update.account');
+
     });
 });
