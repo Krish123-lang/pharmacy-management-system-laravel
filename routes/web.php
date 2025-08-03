@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\SupplierController;
@@ -50,5 +51,12 @@ Route::middleware(['admin'])->group(function () {
         Route::get('suppliers/edit/{supplier}', [SupplierController::class, 'edit'])->name('suppliers.edit');
         Route::put('suppliers/update/{supplier}', [SupplierController::class, 'update'])->name('suppliers.update');
         Route::delete('suppliers/destroy/{supplier}', [SupplierController::class, 'destroy'])->name('suppliers.destroy');
+
+        Route::get('invoices', [InvoiceController::class, 'index'])->name('invoices');
+        Route::get('invoices/create', [InvoiceController::class, 'create'])->name('invoices.create');
+        Route::post('invoices/store', [InvoiceController::class, 'store'])->name('invoices.store');
+        Route::get('invoices/edit/{invoice}', [InvoiceController::class, 'edit'])->name('invoices.edit');
+        Route::put('invoices/update/{invoice}', [InvoiceController::class, 'update'])->name('invoices.update');
+        Route::delete('invoices/destroy/{invoice}', [InvoiceController::class, 'destroy'])->name('invoices.destroy');
     });
 });

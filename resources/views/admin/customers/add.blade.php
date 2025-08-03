@@ -30,7 +30,7 @@
                                 <label for="" class="col-sm-2 col-form-label">Contact Number<span style="color: red;">*</span></label>
 
                                 <div class="col-sm-10">
-                                    <input type="number" name="contact_number" id="contact_number" class="form-control" required>
+                                    <input type="tel" name="contact_number" id="contact_number" class="form-control" required>
                                 </div>
                             </div>
 

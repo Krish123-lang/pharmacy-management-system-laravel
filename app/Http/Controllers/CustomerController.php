@@ -30,7 +30,7 @@ class CustomerController extends Controller
 
         $data = $request->validate([
             'name' => 'required',
-            'contact_number' => 'required|integer|max_digits:10',
+            'contact_number' => 'required',
             'address' => 'required',
             'doctor_name' => 'required',
             'doctor_address' => 'required',
