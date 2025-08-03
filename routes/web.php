@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
@@ -58,5 +59,12 @@ Route::middleware(['admin'])->group(function () {
         Route::get('invoices/edit/{invoice}', [InvoiceController::class, 'edit'])->name('invoices.edit');
         Route::put('invoices/update/{invoice}', [InvoiceController::class, 'update'])->name('invoices.update');
         Route::delete('invoices/destroy/{invoice}', [InvoiceController::class, 'destroy'])->name('invoices.destroy');
+
+        Route::get('purchases', [PurchaseController::class, 'index'])->name('purchases');
+        Route::get('purchases/create', [PurchaseController::class, 'create'])->name('purchases.create');
+        Route::post('purchases/store', [PurchaseController::class, 'store'])->name('purchases.store');
+        Route::get('purchases/edit/{purchase}', [PurchaseController::class, 'edit'])->name('purchases.edit');
+        Route::put('purchases/update/{purchase}', [PurchaseController::class, 'update'])->name('purchases.update');
+        Route::delete('purchases/destroy/{purchase}', [PurchaseController::class, 'destroy'])->name('purchases.destroy');
     });
 });
