@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 // Auth Routes
@@ -20,26 +21,34 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 // Admin Dashboard
 Route::middleware(['admin'])->group(function () {
-    Route::get('admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::get('admin/customers', [CustomerController::class, 'customers'])->name('customers');
-    Route::get('admin/customers/add', [CustomerController::class, 'add_customers'])->name('add_customers');
-    Route::post('admin/customers/add', [CustomerController::class, 'insert_add_customers'])->name('insert_add_customers');
-    Route::get('admin/customers/edit/{customer}', [CustomerController::class, 'edit_customers'])->name('edit_customers');
-    Route::put('admin/customers/edit/{customer}', [CustomerController::class, 'update_customers'])->name('update_customers');
-    Route::delete('admin/customers/delete/{customer}', [CustomerController::class, 'delete_customers'])->name('delete_customers');
+    Route::prefix('admin/')->group(function () {
+        Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+        Route::get('customers', [CustomerController::class, 'customers'])->name('customers');
+        Route::get('customers/add', [CustomerController::class, 'add_customers'])->name('add_customers');
+        Route::post('customers/add', [CustomerController::class, 'insert_add_customers'])->name('insert_add_customers');
+        Route::get('customers/edit/{customer}', [CustomerController::class, 'edit_customers'])->name('edit_customers');
+        Route::put('customers/edit/{customer}', [CustomerController::class, 'update_customers'])->name('update_customers');
+        Route::delete('customers/delete/{customer}', [CustomerController::class, 'delete_customers'])->name('delete_customers');
 
-    Route::get('admin/medicines', [MedicineController::class, 'index'])->name('medicines');
-    Route::get('admin/medicines/create', [MedicineController::class, 'create'])->name('medicines.create');
-    Route::post('admin/medicines/store', [MedicineController::class, 'store'])->name('medicines.store');
-    Route::get('admin/medicines/edit/{medicine}', [MedicineController::class, 'edit'])->name('medicines.edit');
-    Route::put('admin/medicines/update/{medicine}', [MedicineController::class, 'update'])->name('medicines.update');
-    Route::delete('admin/medicines/destroy/{medicine}', [MedicineController::class, 'destroy'])->name('medicines.destroy');
+        Route::get('medicines', [MedicineController::class, 'index'])->name('medicines');
+        Route::get('medicines/create', [MedicineController::class, 'create'])->name('medicines.create');
+        Route::post('medicines/store', [MedicineController::class, 'store'])->name('medicines.store');
+        Route::get('medicines/edit/{medicine}', [MedicineController::class, 'edit'])->name('medicines.edit');
+        Route::put('medicines/update/{medicine}', [MedicineController::class, 'update'])->name('medicines.update');
+        Route::delete('medicines/destroy/{medicine}', [MedicineController::class, 'destroy'])->name('medicines.destroy');
 
-    Route::get('admin/stocks', [StockController::class, 'index'])->name('stocks');
-    Route::get('admin/stocks/create', [StockController::class, 'create'])->name('stocks.create');
-    Route::post('admin/stocks/store', [StockController::class, 'store'])->name('stocks.store');
-    Route::get('admin/stocks/edit/{stock}', [StockController::class, 'edit'])->name('stocks.edit');
-    Route::put('admin/stocks/update/{stock}', [StockController::class, 'update'])->name('stocks.update');
-    Route::delete('admin/stocks/destroy/{stock}', [StockController::class, 'destroy'])->name('stocks.destroy');
+        Route::get('stocks', [StockController::class, 'index'])->name('stocks');
+        Route::get('stocks/create', [StockController::class, 'create'])->name('stocks.create');
+        Route::post('stocks/store', [StockController::class, 'store'])->name('stocks.store');
+        Route::get('stocks/edit/{stock}', [StockController::class, 'edit'])->name('stocks.edit');
+        Route::put('stocks/update/{stock}', [StockController::class, 'update'])->name('stocks.update');
+        Route::delete('stocks/destroy/{stock}', [StockController::class, 'destroy'])->name('stocks.destroy');
 
+        Route::get('suppliers', [SupplierController::class, 'index'])->name('suppliers');
+        Route::get('suppliers/create', [SupplierController::class, 'create'])->name('suppliers.create');
+        Route::post('suppliers/store', [SupplierController::class, 'store'])->name('suppliers.store');
+        Route::get('suppliers/edit/{supplier}', [SupplierController::class, 'edit'])->name('suppliers.edit');
+        Route::put('suppliers/update/{supplier}', [SupplierController::class, 'update'])->name('suppliers.update');
+        Route::delete('suppliers/destroy/{supplier}', [SupplierController::class, 'destroy'])->name('suppliers.destroy');
+    });
 });
