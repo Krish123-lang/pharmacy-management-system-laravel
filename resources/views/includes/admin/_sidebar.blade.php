@@ -17,11 +17,18 @@
           </li><!-- End Customers Nav -->
 
           <li class="nav-item">
-              <a class="nav-link" @if (Request::segment(2) == 'customers') @else collapsed @endif href="{{ route('medicines') }}">
+              <a class="nav-link" @if (Request::segment(2) == 'medicines') @else collapsed @endif href="{{ route('medicines') }}">
                   <i class="bi bi-shop"></i>
                   <span>Medicines</span>
               </a>
           </li><!-- End Medicines Nav -->
+
+          <li class="nav-item">
+              <a class="nav-link" @if (Request::segment(2) == 'stocks') @else collapsed @endif href="{{ route('stocks') }}">
+                  <i class="bi bi-archive"></i>
+                  <span>Stocks</span>
+              </a>
+          </li><!-- End Medicines Stocks Nav -->
 
           <li class="nav-item">
               <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">

@@ -60,6 +60,7 @@ class CustomerController extends Controller
 
     public function delete_customers(Customer $customer)
     {
+        $customer = Customer::find($customer->id);
         $customer->delete();
         return to_route('customers')->with('success', "Customer deleted successfully!");
     }

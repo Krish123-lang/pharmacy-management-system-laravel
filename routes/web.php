@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\StockController;
 use Illuminate\Support\Facades\Route;
 
 // Auth Routes
@@ -33,4 +34,12 @@ Route::middleware(['admin'])->group(function () {
     Route::get('admin/medicines/edit/{medicine}', [MedicineController::class, 'edit'])->name('medicines.edit');
     Route::put('admin/medicines/update/{medicine}', [MedicineController::class, 'update'])->name('medicines.update');
     Route::delete('admin/medicines/destroy/{medicine}', [MedicineController::class, 'destroy'])->name('medicines.destroy');
+
+    Route::get('admin/stocks', [StockController::class, 'index'])->name('stocks');
+    Route::get('admin/stocks/create', [StockController::class, 'create'])->name('stocks.create');
+    Route::post('admin/stocks/store', [StockController::class, 'store'])->name('stocks.store');
+    Route::get('admin/stocks/edit/{stock}', [StockController::class, 'edit'])->name('stocks.edit');
+    Route::put('admin/stocks/update/{stock}', [StockController::class, 'update'])->name('stocks.update');
+    Route::delete('admin/stocks/destroy/{stock}', [StockController::class, 'destroy'])->name('stocks.destroy');
+
 });
