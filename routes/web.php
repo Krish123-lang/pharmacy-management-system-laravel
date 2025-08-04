@@ -8,6 +8,7 @@ use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\WebsiteLogoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -88,5 +89,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
         Route::get('account', [DashboardController::class, 'account'])->name('account');
         Route::put('update_account/{user}', [DashboardController::class, 'update_account'])->name('update.account');
 
+        Route::get('website_logo', [WebsiteLogoController::class, 'website_logo'])->name('website_logo');
+        Route::put('website_logo_update', [WebsiteLogoController::class, 'website_logo_update'])->name('website_logo_update');
     });
 });

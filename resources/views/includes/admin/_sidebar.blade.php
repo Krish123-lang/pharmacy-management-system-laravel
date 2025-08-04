@@ -51,13 +51,13 @@
               </a>
           </li><!-- End purchases Nav -->
 
-          {{-- <li class="nav-item">
-              <a class="nav-link" @if (Request::segment(2) == 'account') @else collapsed @endif href="{{ route('account') }}">
-                  <i class="bi bi-layout-text-window-reverse"></i>
-                  <span>My Acccount</span>
+          <li class="nav-item">
+              <a class="nav-link" @if (Request::segment(2) == 'website_logo') @else collapsed @endif href="{{ route('website_logo') }}">
+                  <i class="bi bi-dash-circle"></i>
+                  <span>Website Logo</span>
               </a>
-          </li> --}}
-          <!-- End My Account Nav -->
+          </li>
+          <!-- End Website Logo Nav -->
 
           <li class="nav-item">
               <a class="nav-link" @if (Request::segment(2) == 'logout') @else collapsed @endif href="{{ route('logout') }}">
