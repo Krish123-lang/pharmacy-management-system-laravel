@@ -826,6 +826,18 @@ h6 {
   color: #ff771d;
   background: #ffecdf;
 }
+.dashboard .suppliers-card .card-icon {
+  color: #6b2586;
+  background: #e0d8f3;
+}
+.dashboard .invoices-card .card-icon {
+  color: #6d0b47;
+  background: #ffc6e6;
+}
+.dashboard .purchases-card .card-icon {
+  color: #04949e;
+  background: #9fe8f5;
+}
 
 /* Activity */
 .dashboard .activity {

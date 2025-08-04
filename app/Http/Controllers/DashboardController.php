@@ -2,9 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
+use App\Models\Invoice;
+use App\Models\Medicine;
+use App\Models\Purchase;
+use App\Models\Stock;
+use App\Models\Supplier;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -13,7 +20,13 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.dashboard.list');
+        $total_customers = Customer::count();
+        $total_medicines = Medicine::count();
+        $total_stocks = Stock::count();
+        $total_suppliers = Supplier::count();
+        $total_invoices = Invoice::count();
+        $total_purchase_amount = DB::table('purchases')->sum('total_amount');
+        return view('admin.dashboard.list', compact('total_customers', 'total_medicines', 'total_stocks', 'total_suppliers', 'total_invoices', 'total_purchase_amount'));
     }
 
     public function account(Request $request)

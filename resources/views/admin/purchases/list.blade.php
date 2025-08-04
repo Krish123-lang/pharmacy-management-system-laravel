@@ -48,7 +48,7 @@
                                         <td>
                                             @if ($purchase->payment_status == 1) Pending
                                             @elseif ($purchase->payment_status == 2) Accepted
-                                            @elseif ($purchase->payment_status == 2) Cancelled
+                                            @else Cancelled
                                             @endif
                                         </td>
                                         <td>{{ date('Y-m-d', strtotime($purchase->created_at)) }}</td>

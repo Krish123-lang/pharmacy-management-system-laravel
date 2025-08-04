@@ -11,7 +11,7 @@
 
           <li class="nav-item">
               <a class="nav-link" @if (Request::segment(2) == 'customers') @else collapsed @endif href="{{ route('customers') }}">
-                  <i class="bi bi-person"></i>
+                  <i class="bi bi-people"></i>
                   <span>Customers</span>
               </a>
           </li><!-- End Customers Nav -->

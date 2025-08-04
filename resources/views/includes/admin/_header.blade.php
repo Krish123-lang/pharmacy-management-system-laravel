@@ -2,8 +2,16 @@
 
       <div class="d-flex align-items-center justify-content-between">
           <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
-              <img src="{{ asset('assets/img/logo.png') }}" alt="">
-              <span class="d-none d-lg-block">Pharmacy M.S</span>
+                @if($logo->logo)
+                    <img src="{{ asset('storage/' . $logo->logo) }}"  style="width: 30px; height: 50px;" alt="{{ $logo->website_name }}">
+                @endif
+              <span class="d-none d-lg-block">
+                @if($logo->website_name)
+                    {{ $logo->website_name }}
+                @else
+                    Pharmacy M.S
+                @endif
+            </span>
           </a>
           <i class="bi bi-list toggle-sidebar-btn"></i>
       </div><!-- End Logo -->
