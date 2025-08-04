@@ -11,10 +11,10 @@
 
             <div class="pt-4 pb-2">
                 <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
-                <p class="text-center small">Enter your personal details to create account</p>
             </div>
 
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation" novalidate action="{{ route('registerSave') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="col-12">
                     <label for="yourName" class="form-label">Your Name</label>
                     <input type="text" name="name" class="form-control" id="yourName" required>

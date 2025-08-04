@@ -9,6 +9,8 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 // Auth Routes
 Route::get('/', [AuthController::class, 'login'])->name('login');
@@ -18,11 +20,27 @@ Route::post('forgot_post', [AuthController::class, 'forgot_post'])->name('forgot
 Route::get('reset/{token}', [AuthController::class, 'getReset'])->name('getReset');
 Route::post('reset/{token}', [AuthController::class, 'postReset'])->name('postReset');
 Route::get('register', [AuthController::class, 'register'])->name('register');
+Route::post('registerSave', [AuthController::class, 'registerSave'])->name('registerSave');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+// Email Verification Routes
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect()->route('dashboard');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('success', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 
 // Admin Dashboard
-Route::middleware(['admin'])->group(function () {
+Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::prefix('admin/')->group(function () {
         Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
         Route::get('customers', [CustomerController::class, 'customers'])->name('customers');

@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -33,7 +35,18 @@ class DashboardController extends Controller
         } else {
             $credentials['password'] = Hash::make($credentials['password']);
         }
-        // dd($request->all);
+
+        if ($request->hasFile('profile_picture')) {
+            // deletes old profile picture if exists
+            if (!empty($user->profile_picture) && Storage::disk('public')->exists('profile_pictures/' . $user->profile_picture)) {
+                Storage::disk('public')->delete('profile_pictures/' . $user->profile_picture);
+            }
+
+            $file = $request->file('profile_picture');
+            $filename = Str::random(30) . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('profile_pictures', $filename, 'public');
+            $credentials['profile_picture'] = $filename;
+        }
         $user->update($credentials);
         return to_route('account')->with('success', 'Account updated successfully!');
     }

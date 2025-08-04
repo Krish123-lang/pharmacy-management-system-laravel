@@ -44,6 +44,20 @@
                             </div>
 
                             <div class="row mb-3">
+                                <label for="profile_picture" class="col-sm-2 col-form-label">Profile Picture</label>
+                                <div class="col-sm-10">
+                                    <input type="file" name="profile_picture" id="profile_picture" class="form-control">
+
+                                    @if(!empty($user->profile_picture))
+                                        <img src="{{ $user->getProfilePicture() }}" class="img-thumbnail mt-2" width="250px" alt="{{ $user->name }}">
+                                    @endif
+                                    @error('profile_picture')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
                                 <label for="password" class="col-sm-2 col-form-label">Password</label>
                                 <div class="col-sm-10">
                                     <input type="password" name="password" id="password" class="form-control" autocomplete="new-password">

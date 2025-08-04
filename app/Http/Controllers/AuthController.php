@@ -22,16 +22,15 @@ class AuthController extends Controller
 
     public function login_post(Request $request)
     {
-
-        // $credentials = $request->validate([
-        //     'email' => 'required|email',
-        //     'password' => 'required'
-        // ]);
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], true)) {
+            if (is_null(Auth::user()->email_verified_at)) {
+                Auth::logout();
+                return redirect()->back()->with('error', 'Please verify your email before logging in.');
+            }
             if (Auth::user()->is_role == 'ADM') {
                 return to_route('dashboard');
             } else {
-                return redirect()->back()->with('error', 'Please enter correct credentials!');
+                return redirect()->back()->with('error', 'Please enter correct admin credentials!');
             }
         } else {
             return redirect()->back()->with('error', 'Please enter correct credentials!');
@@ -97,5 +96,23 @@ class AuthController extends Controller
     public function register()
     {
         return view('auth.register');
+    }
+
+    public function registerSave(Request $request)
+    {
+        $credentials = $request->validate([
+            'name' => 'required|max:100',
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        $user = User::create([
+            'name' => $credentials['name'],
+            'email' => $credentials['email'],
+            'password' => Hash::make($credentials['password']),
+        ]);
+        // send email verification
+        $user->sendEmailVerificationNotification();
+        Auth::login($user);
+        return redirect()->route('verification.notice')->with('success', 'Registration successful! Please check your email to verify your account.');
     }
 }
