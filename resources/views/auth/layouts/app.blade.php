@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
-  <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="{{ asset('storage/' . $logo->logo) }}" rel="icon">
+  <link href="{{ asset('storage/' . $logo->logo) }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -41,9 +41,17 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="{{ asset('assets/img/logo.png') }}" alt="">
-                  <span class="d-none d-lg-block">Pharmacy M.S</span>
+                <a class="logo d-flex align-items-center w-auto">
+                    @if($logo->logo)
+                        <img src="{{ asset('storage/' . $logo->logo) }}"  style="width: 30px; height: 50px;" alt="{{ $logo->website_name }}">
+                    @endif
+                  <span class="d-none d-lg-block">
+                     @if($logo->website_name)
+                        {{ $logo->website_name }}
+                    @else
+                        Pharmacy M.S
+                    @endif
+                  </span>
                 </a>
               </div><!-- End Logo -->
 
