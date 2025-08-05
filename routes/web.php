@@ -24,6 +24,8 @@ Route::get('register', [AuthController::class, 'register'])->name('register');
 Route::post('registerSave', [AuthController::class, 'registerSave'])->name('registerSave');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('user/dashboard', [AuthController::class, 'user_dashboard'])->name('user.dashboard');
+
 // Email Verification Routes
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
@@ -92,4 +94,11 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
         Route::get('website_logo', [WebsiteLogoController::class, 'website_logo'])->name('website_logo');
         Route::put('website_logo_update', [WebsiteLogoController::class, 'website_logo_update'])->name('website_logo_update');
     });
+});
+
+
+// User Dashboard
+Route::middleware(['auth', 'verified'])->group(function(){
+    Route::get('user/account', [AuthController::class, 'userAccount'])->name('user.account');
+    Route::put('user/update_account', [AuthController::class, 'userUpdateAccount'])->name('user.update.account');
 });

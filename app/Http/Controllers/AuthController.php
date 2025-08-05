@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use App\Mail\ForgotPasswordMail;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
@@ -29,8 +30,12 @@ class AuthController extends Controller
             }
             if (Auth::user()->is_role == 'ADM') {
                 return to_route('dashboard');
+            } elseif (Auth::user()->is_role == 'USR') {
+                // redirect to user dashboard
+                return redirect()->route('user.dashboard');
             } else {
-                return redirect()->back()->with('error', 'Please enter correct admin credentials!');
+                Auth::logout();
+                return redirect()->back()->with('error', 'Your account role is not recognized. Please contact support.');
             }
         } else {
             return redirect()->back()->with('error', 'Please enter correct credentials!');
@@ -114,5 +119,54 @@ class AuthController extends Controller
         $user->sendEmailVerificationNotification();
         Auth::login($user);
         return redirect()->route('verification.notice')->with('success', 'Registration successful! Please check your email to verify your account.');
+    }
+
+    public function user_dashboard()
+    {
+        return view('user.dashboard');
+    }
+
+    public function userAccount()
+    {
+        $user = Auth::user();
+        return view('user.account.update', compact('user'));
+    }
+
+    public function userUpdateAccount(User $user, Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'sometimes|max:100',
+            'email' => 'sometimes|email' . $user->id,
+            'profile_picture' => 'nullable|image|mimes:png,jpg,jpeg,gif|max:2048',
+            'password' => 'nullable|confirmed|min:6',
+        ]);
+
+        $user->name = $validated['name'];
+        $user->email = $validated['email'];
+
+        if ($request->hasFile('profile_picture')) {
+            // deletes old profile picture if exists
+            if (!empty($user->profile_picture) && Storage::disk('public')->exists('profile_pictures/' . $user->profile_picture)) {
+                Storage::disk('public')->delete('profile_pictures/' . $user->profile_picture);
+            }
+
+            $file = $request->file('profile_picture');
+            $filename = Str::random(30) . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('profile_pictures', $filename, 'public');
+            // Save only the filename, not the path
+            $user->profile_picture = $filename;
+        }
+
+        if (!empty($validated['password'])) {
+            $user->password = Hash::make($validated['password']);
+        }
+
+        // if (empty($validated['password'])) {
+        //     unset($validated['password']);
+        // } else {
+        //     $validated['password'] = Hash::make($validated['password']);
+        // }
+        $user->update($validated);
+        return to_route('user.account')->with('success', 'Profile updated successfully!');
     }
 }

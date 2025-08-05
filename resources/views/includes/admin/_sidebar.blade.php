@@ -9,6 +9,8 @@
               </a>
           </li><!-- End Dashboard Nav -->
 
+          @if ((Auth::user()->is_role) === 'ADM')
+
           <li class="nav-item">
               <a class="nav-link" @if (Request::segment(2) == 'customers') @else collapsed @endif href="{{ route('customers') }}">
                   <i class="bi bi-people"></i>
@@ -58,6 +60,8 @@
               </a>
           </li>
           <!-- End Website Logo Nav -->
+          @endif
+
 
           <li class="nav-item">
               <a class="nav-link" @if (Request::segment(2) == 'logout') @else collapsed @endif href="{{ route('logout') }}">
