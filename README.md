@@ -1,61 +1,192 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Pharmacy Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured Pharmacy Management System built using **Laravel 12**. This platform allows **pharmacists to add, update, delete items**—featuring multi-authentication (pharmacists, user), secure registration, dynamic dashboards, medicines, items, and more. Ideal for showcasing modern Laravel best practices in building real-world, production-ready applications.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Multi-authentication (Pharmacists | User)
+- Role-based Dashboards
+- Medical Items Posting
+- Items Search & Filters
+- Secure Registration & Login
+- Database Migrations
+- Admin/User Panel: User Management
+- Laravel Validation, Authorization, and Middleware
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Layer        | Technology         |
+|--------------|--------------------|
+| Backend      | Laravel 12         |
+| Frontend     | Blade Templates, Bootstrap |
+| Authentication | Laravel Custom Authentication    |
+| Database     | MySQL / MariaDB    |
+| Versioning   | Git & GitHub       |
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Screenshots
 
-## Laravel Sponsors
+> ### _Authentication_
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Login Page
 
-### Premium Partners
+<img width="508" height="570" alt="image" src="https://github.com/user-attachments/assets/f827887a-be9b-4967-b920-417237fde635" />
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+- Register Page
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<img width="535" height="617" alt="image" src="https://github.com/user-attachments/assets/dc540a3a-5099-44a7-9ab8-c8199cdc5f3a" />
 
-## Code of Conduct
+<img width="441" height="627" alt="image" src="https://github.com/user-attachments/assets/051a2cb5-7a84-493e-9b00-b7c5c6c18e6b" />
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+- Forgot Password Page
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<img width="524" height="484" alt="image" src="https://github.com/user-attachments/assets/35f58615-ea16-4bcc-b144-6ec65fa5ffbb" />
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Register user Email Verification
+
+<img width="540" height="516" alt="image" src="https://github.com/user-attachments/assets/22fc7846-14c5-45f4-b71f-9f0561927ce4" />
+
+<img width="969" height="678" alt="image" src="https://github.com/user-attachments/assets/75bb721e-b88f-43e1-874e-39e6a0d5b278" />
+
+---
+
+> ### _User Dashboard_
+
+<img width="1363" height="682" alt="image" src="https://github.com/user-attachments/assets/99ad3a90-68ea-4e04-8172-6d7fad697ecb" />
+
+---
+
+> ### _Admin Dashboard_
+
+- Dashboard
+
+<img width="1365" height="687" alt="image" src="https://github.com/user-attachments/assets/b2d74638-4f4a-446e-83df-ccb6816e6896" />
+
+---
+
+- Customers List
+
+<img width="1353" height="672" alt="image" src="https://github.com/user-attachments/assets/8b1c1f52-1074-4ad0-9fea-3a4c100bfc94" />
+
+---
+
+- Medicine List
+
+<img width="1350" height="606" alt="image" src="https://github.com/user-attachments/assets/fbb27b6c-d97a-4660-b73c-51eb4191ac10" />
+
+---
+
+- Stocks List
+
+<img width="1363" height="684" alt="image" src="https://github.com/user-attachments/assets/b482b2f0-d2ba-4dc3-8422-b7c0d2bd87c2" />
+
+---
+
+- Suppliers List
+
+<img width="1352" height="682" alt="image" src="https://github.com/user-attachments/assets/562f5692-d46d-400d-9221-3ffb624d5e32" />
+
+---
+
+- Invoices List
+
+<img width="1356" height="671" alt="image" src="https://github.com/user-attachments/assets/a3836c16-a5a7-4d36-a36e-a0464a4a8555" />
+
+---
+
+- Purchases List
+
+<img width="1362" height="672" alt="image" src="https://github.com/user-attachments/assets/7ad751b2-45fa-4242-b564-c199217dd26f" />
+
+---
+
+> ### _Website name and Logo_
+
+<img width="1352" height="677" alt="image" src="https://github.com/user-attachments/assets/b9ae5983-2714-45a4-a914-67857b41409b" />
+
+---
+
+> ### _Profile Update_
+
+<img width="1351" height="684" alt="image" src="https://github.com/user-attachments/assets/1719c8e8-b64e-4140-8e64-4dceaae7f3e3" />
+
+---
+
+
+
+## Project Structure (Simplified)
+
+```bash
+├── app/
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── public/
+├── resources/
+│   └── views/
+├── routes/
+│   └── web.php
+├── .env.example
+└── README.md
+```
+
+---
+
+# Installation
+
+1. Clone the repo
+`git clone https://github.com/Krish123-lang/pharmacy-management-system-laravel.git`
+
+2. Navigate to project folder
+`cd pharmacy-management-system-laravel`
+
+3. Install dependencies
+`composer install && composer update`
+
+4. Create a .env file
+`cp .env .example .env`
+
+5. Generate app key
+`php artisan key:generate`
+
+6. Configure your .env file (DB, mail, etc.)
+
+7. Run migrations
+`php artisan migrate`
+
+8. Serve the app
+`php artisan serve`
+
+9. Run npm
+`npm run dev`
+
+---
+
+# Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+# Author
+**Krishna**
+
+[Github](https://github.com/Krish123-lang/) | Laravel Developer | Passionate about Full Stack Development
+
+---
+
+![Made with Laravel](https://img.shields.io/badge/Made%20with-Laravel-red?style=flat&logo=laravel)
+![Open in Visual Studio Code](https://img.shields.io/badge/VSCode-Ready-blue?style=flat&logo=visualstudiocode)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat&logo=github)
+
+---
