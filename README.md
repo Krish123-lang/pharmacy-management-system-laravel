@@ -1,61 +1,177 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Pharmacy Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured Pharmacy Management System built using **Laravel 12**. This platform allows **pharmacists to add, update, delete items**—featuring multi-authentication (pharmacists, user), secure registration, dynamic dashboards, medicines, items, and more. Ideal for showcasing modern Laravel best practices in building real-world, production-ready applications.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Multi-authentication (Pharmacists | User)
+- Role-based Dashboards
+- Medical Items Posting
+- Items Search & Filters
+- Secure Registration & Login
+- Database Migrations
+- Admin/User Panel: User Management
+- Laravel Validation, Authorization, and Middleware
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Layer        | Technology         |
+|--------------|--------------------|
+| Backend      | Laravel 12         |
+| Frontend     | Blade Templates, Bootstrap |
+| Authentication | Laravel Custom Authentication    |
+| Database     | MySQL / MariaDB    |
+| Versioning   | Git & GitHub       |
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Screenshots
 
-## Laravel Sponsors
+> ### _Seeker_
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Home Page
 
-### Premium Partners
+![homePage](https://github.com/user-attachments/assets/c1803b75-d3c9-4056-b6fc-8235d296d17c)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- Job Seeker Login
 
-## Contributing
+![JobseekerLogin](https://github.com/user-attachments/assets/9f930293-507d-4653-95bb-63938a0d7199)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Employer Login
 
-## Code of Conduct
+![EmployerLogin](https://github.com/user-attachments/assets/8026e39b-c879-4912-8852-58a32d6d5ed3)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Account Verification Email
 
-## Security Vulnerabilities
+![accountVerificationEmail](https://github.com/user-attachments/assets/8514590c-c711-478c-8b87-fbc0a9e55a3b)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Viewing a Job
 
-## License
+![singleJob](https://github.com/user-attachments/assets/ce06e313-7e4a-45eb-8f7f-2da9c5fa00c9)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Uploading Resume while Applying
+
+![uploadingResumeWhileApplying](https://github.com/user-attachments/assets/95dcdfd2-159b-4269-aa0a-a0d9155d8b70)
+
+- Job Seeker Profile
+
+![SeekerProfilePage](https://github.com/user-attachments/assets/8981840a-7737-4c8c-b47c-e97ae09a01c6)
+
+- List of Applied jobs
+
+![listOfAppliedJobs](https://github.com/user-attachments/assets/cbf2008d-07ed-48c7-a9e0-59d85c597928)
+
+---
+
+> ### _Employer_
+
+- Employer Dashboard
+
+![employerDashboard](https://github.com/user-attachments/assets/6a9cb53f-189d-4916-99c4-60f112ae8859)
+
+- Employer Profile
+
+![EmployerProfile](https://github.com/user-attachments/assets/35f75d1b-085e-40e2-99dd-c252503cfded)
+
+- Create Job
+
+![createJob](https://github.com/user-attachments/assets/d214b5fa-6bd4-4e19-9de2-1c1a71a5001c)
+
+- View All jobs
+
+![viewAllJobs](https://github.com/user-attachments/assets/24fd9ff7-f233-4b5d-9e28-7d2efacabcd1)
+
+- Selecting Subscription Plan
+
+![employerSelectingSubscriptionPlan](https://github.com/user-attachments/assets/268adc59-b6b1-4663-b339-d515fb28c39b)
+
+- Payment through Stripe
+
+![StripePayment](https://github.com/user-attachments/assets/2f1b7104-64f0-4532-afd9-cec739e3290b)
+
+- Payment successful Message
+
+![PaymentSuccessful](https://github.com/user-attachments/assets/e9e0cc23-d5ca-415c-91ba-fa010503cee4)
+
+- List of Applicants
+
+![ListOfApplicants](https://github.com/user-attachments/assets/ce8e2da3-a07c-4fc2-b735-bf8e48361a99)
+
+- Viewing All Applicants
+
+![ViewingApplicants](https://github.com/user-attachments/assets/99d195f8-0b49-4dc9-8612-53b71509e548)
+
+---
+
+## Project Structure (Simplified)
+
+```bash
+├── app/
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── public/
+├── resources/
+│   └── views/
+├── routes/
+│   └── web.php
+├── .env.example
+└── README.md
+```
+
+---
+
+# Installation
+
+- Import the `jobportal.sql` file in your phpadmin dashboard.
+
+1. Clone the repo
+`git clone https://github.com/Krish123-lang/laravel_job_portal.git`
+
+2. Navigate to project folder
+`cd laravel_job_portal`
+
+3. Install dependencies
+`composer install && composer update`
+
+4. Create a .env file
+`cp .env.example .env`
+
+5. Generate app key
+`php artisan key:generate`
+
+6. Configure your .env file (DB, mail, etc.)
+
+7. Run migrations and seeders (optional)
+`php artisan migrate --seed`
+
+8. Serve the app
+`php artisan serve`
+
+9. Run npm
+`npm run dev`
+
+
+---
+
+# Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+# Author
+**Krishna**
+
+[Github](https://github.com/Krish123-lang/) | Laravel Developer | Passionate about Full Stack Development
+
+---
+
+![Made with Laravel](https://img.shields.io/badge/Made%20with-Laravel-red?style=flat&logo=laravel)
+![Open in Visual Studio Code](https://img.shields.io/badge/VSCode-Ready-blue?style=flat&logo=visualstudiocode)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat&logo=github)
+
+---
