@@ -31,81 +31,99 @@ A full-featured Pharmacy Management System built using **Laravel 12**. This plat
 
 ## Screenshots
 
-> ### _Seeker_
+> ### _Authentication_
 
-- Home Page
+- Login Page
 
-![homePage](https://github.com/user-attachments/assets/c1803b75-d3c9-4056-b6fc-8235d296d17c)
-
-- Job Seeker Login
-
-![JobseekerLogin](https://github.com/user-attachments/assets/9f930293-507d-4653-95bb-63938a0d7199)
-
-- Employer Login
-
-![EmployerLogin](https://github.com/user-attachments/assets/8026e39b-c879-4912-8852-58a32d6d5ed3)
-
-- Account Verification Email
-
-![accountVerificationEmail](https://github.com/user-attachments/assets/8514590c-c711-478c-8b87-fbc0a9e55a3b)
-
-- Viewing a Job
-
-![singleJob](https://github.com/user-attachments/assets/ce06e313-7e4a-45eb-8f7f-2da9c5fa00c9)
-
-- Uploading Resume while Applying
-
-![uploadingResumeWhileApplying](https://github.com/user-attachments/assets/95dcdfd2-159b-4269-aa0a-a0d9155d8b70)
-
-- Job Seeker Profile
-
-![SeekerProfilePage](https://github.com/user-attachments/assets/8981840a-7737-4c8c-b47c-e97ae09a01c6)
-
-- List of Applied jobs
-
-![listOfAppliedJobs](https://github.com/user-attachments/assets/cbf2008d-07ed-48c7-a9e0-59d85c597928)
+<img width="508" height="570" alt="image" src="https://github.com/user-attachments/assets/f827887a-be9b-4967-b920-417237fde635" />
 
 ---
 
-> ### _Employer_
+- Register Page
 
-- Employer Dashboard
+<img width="535" height="617" alt="image" src="https://github.com/user-attachments/assets/dc540a3a-5099-44a7-9ab8-c8199cdc5f3a" />
 
-![employerDashboard](https://github.com/user-attachments/assets/6a9cb53f-189d-4916-99c4-60f112ae8859)
-
-- Employer Profile
-
-![EmployerProfile](https://github.com/user-attachments/assets/35f75d1b-085e-40e2-99dd-c252503cfded)
-
-- Create Job
-
-![createJob](https://github.com/user-attachments/assets/d214b5fa-6bd4-4e19-9de2-1c1a71a5001c)
-
-- View All jobs
-
-![viewAllJobs](https://github.com/user-attachments/assets/24fd9ff7-f233-4b5d-9e28-7d2efacabcd1)
-
-- Selecting Subscription Plan
-
-![employerSelectingSubscriptionPlan](https://github.com/user-attachments/assets/268adc59-b6b1-4663-b339-d515fb28c39b)
-
-- Payment through Stripe
-
-![StripePayment](https://github.com/user-attachments/assets/2f1b7104-64f0-4532-afd9-cec739e3290b)
-
-- Payment successful Message
-
-![PaymentSuccessful](https://github.com/user-attachments/assets/e9e0cc23-d5ca-415c-91ba-fa010503cee4)
-
-- List of Applicants
-
-![ListOfApplicants](https://github.com/user-attachments/assets/ce8e2da3-a07c-4fc2-b735-bf8e48361a99)
-
-- Viewing All Applicants
-
-![ViewingApplicants](https://github.com/user-attachments/assets/99d195f8-0b49-4dc9-8612-53b71509e548)
+<img width="441" height="627" alt="image" src="https://github.com/user-attachments/assets/051a2cb5-7a84-493e-9b00-b7c5c6c18e6b" />
 
 ---
+
+- Forgot Password Page
+
+<img width="524" height="484" alt="image" src="https://github.com/user-attachments/assets/35f58615-ea16-4bcc-b144-6ec65fa5ffbb" />
+
+---
+
+- Register user Email Verification
+
+<img width="540" height="516" alt="image" src="https://github.com/user-attachments/assets/22fc7846-14c5-45f4-b71f-9f0561927ce4" />
+
+<img width="969" height="678" alt="image" src="https://github.com/user-attachments/assets/75bb721e-b88f-43e1-874e-39e6a0d5b278" />
+
+---
+
+> ### _User Dashboard_
+
+<img width="1363" height="682" alt="image" src="https://github.com/user-attachments/assets/99ad3a90-68ea-4e04-8172-6d7fad697ecb" />
+
+---
+
+> ### _Admin Dashboard_
+
+- Dashboard
+
+<img width="1365" height="687" alt="image" src="https://github.com/user-attachments/assets/b2d74638-4f4a-446e-83df-ccb6816e6896" />
+
+---
+
+- Customers List
+
+<img width="1353" height="672" alt="image" src="https://github.com/user-attachments/assets/8b1c1f52-1074-4ad0-9fea-3a4c100bfc94" />
+
+---
+
+- Medicine List
+
+<img width="1350" height="606" alt="image" src="https://github.com/user-attachments/assets/fbb27b6c-d97a-4660-b73c-51eb4191ac10" />
+
+---
+
+- Stocks List
+
+<img width="1363" height="684" alt="image" src="https://github.com/user-attachments/assets/b482b2f0-d2ba-4dc3-8422-b7c0d2bd87c2" />
+
+---
+
+- Suppliers List
+
+<img width="1352" height="682" alt="image" src="https://github.com/user-attachments/assets/562f5692-d46d-400d-9221-3ffb624d5e32" />
+
+---
+
+- Invoices List
+
+<img width="1356" height="671" alt="image" src="https://github.com/user-attachments/assets/a3836c16-a5a7-4d36-a36e-a0464a4a8555" />
+
+---
+
+- Purchases List
+
+<img width="1362" height="672" alt="image" src="https://github.com/user-attachments/assets/7ad751b2-45fa-4242-b564-c199217dd26f" />
+
+---
+
+> ### _Website name and Logo_
+
+<img width="1352" height="677" alt="image" src="https://github.com/user-attachments/assets/b9ae5983-2714-45a4-a914-67857b41409b" />
+
+---
+
+> ### _Profile Update_
+
+<img width="1351" height="684" alt="image" src="https://github.com/user-attachments/assets/1719c8e8-b64e-4140-8e64-4dceaae7f3e3" />
+
+---
+
+
 
 ## Project Structure (Simplified)
 
@@ -127,34 +145,31 @@ A full-featured Pharmacy Management System built using **Laravel 12**. This plat
 
 # Installation
 
-- Import the `jobportal.sql` file in your phpadmin dashboard.
-
 1. Clone the repo
-`git clone https://github.com/Krish123-lang/laravel_job_portal.git`
+`git clone https://github.com/Krish123-lang/pharmacy-management-system-laravel.git`
 
 2. Navigate to project folder
-`cd laravel_job_portal`
+`cd pharmacy-management-system-laravel`
 
 3. Install dependencies
 `composer install && composer update`
 
 4. Create a .env file
-`cp .env.example .env`
+`cp .env .example .env`
 
 5. Generate app key
 `php artisan key:generate`
 
 6. Configure your .env file (DB, mail, etc.)
 
-7. Run migrations and seeders (optional)
-`php artisan migrate --seed`
+7. Run migrations
+`php artisan migrate`
 
 8. Serve the app
 `php artisan serve`
 
 9. Run npm
 `npm run dev`
-
 
 ---
 
